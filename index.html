@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbitly - Project planning for small teams</title>
+    <meta name="description" content="Orbitly is a visual project planner that helps small teams plan sprints, track work and ship on time, with a free plan for up to 5 people." />
+    <link rel="stylesheet" href="/src/demo/demo.css" />
+  </head>
+  <body>
+    <header class="nav" id="top">
+      <div class="wrap nav-inner">
+        <a class="logo" href="#top" aria-label="Orbitly home"><span class="logo-mark"></span>Orbitly</a>
+        <nav aria-label="Main">
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn-small" href="#signup" id="nav-signup">Sign up free</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">Project planning for teams of 2-50</p>
+            <h1>Plan sprints, track work and ship on time - without the spreadsheet chaos.</h1>
+            <p class="lead">Orbitly is a visual project planner for small teams. Drag tasks onto a timeline, see who's overloaded at a glance, and get a weekly progress report sent to your inbox automatically.</p>
+            <div class="hero-cta">
+              <a class="btn" href="#signup" id="hero-cta">Start free - no card needed</a>
+              <a class="btn btn-ghost" href="#pricing" id="hero-pricing">See pricing</a>
+            </div>
+            <p class="small">Trusted by 4,200+ teams. Free forever for up to 5 people.</p>
+          </div>
+          <div class="hero-card" aria-hidden="true">
+            <div class="mock-row"><span class="dot a"></span><span class="bar" style="width:70%"></span></div>
+            <div class="mock-row"><span class="dot b"></span><span class="bar" style="width:45%;margin-left:20%"></span></div>
+            <div class="mock-row"><span class="dot c"></span><span class="bar" style="width:55%;margin-left:35%"></span></div>
+            <div class="mock-row"><span class="dot a"></span><span class="bar" style="width:30%;margin-left:60%"></span></div>
+            <div class="mock-row"><span class="dot b"></span><span class="bar" style="width:50%;margin-left:10%"></span></div>
+          </div>
+        </div>
+        <div class="wrap try" data-ag-ignore>
+          <span>Try asking the guide:</span>
+          <button type="button" data-ask="What does this company do?">What does this company do?</button>
+          <button type="button" data-ask="Where can I sign up?">Where can I sign up?</button>
+          <button type="button" data-ask="Walk me through this page">Walk me through this page</button>
+          <button type="button" data-ask="Help me fill in the signup form">Help me fill in the signup form</button>
+          <button type="button" data-ask="Do you integrate with SAP?">Do you integrate with SAP?</button>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="wrap">
+          <h2>Everything a small team needs, nothing it doesn't</h2>
+          <div class="grid3">
+            <article class="card"><h3>Drag-and-drop timeline</h3><p>Plan sprints and milestones on a visual timeline. Move a task and its dependencies move with it.</p></article>
+            <article class="card"><h3>Workload view</h3><p>See each person's capacity for the week and spot who is overloaded before deadlines slip.</p></article>
+            <article class="card"><h3>Automatic weekly reports</h3><p>Every Monday, Orbitly emails a progress summary to your team and stakeholders. No status meetings needed.</p></article>
+            <article class="card"><h3>Integrations</h3><p>Connects with Slack, GitHub, Google Calendar and Figma. Updates flow both ways.</p></article>
+            <article class="card"><h3>Guest access</h3><p>Invite clients or freelancers as guests who can view and comment, free of charge.</p></article>
+            <article class="card"><h3>Security built in</h3><p>Single sign-on, two-factor authentication and data encrypted at rest. Hosted in the EU or US, your choice.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="how">
+        <div class="wrap">
+          <h2>How it works</h2>
+          <ol class="steps">
+            <li><strong>Create your workspace.</strong> Sign up with your work email - it takes under a minute.</li>
+            <li><strong>Import or add tasks.</strong> Bring tasks in from a CSV, Trello or Jira, or start from a template.</li>
+            <li><strong>Invite your team.</strong> Everyone sees the same live plan, and the weekly report keeps stakeholders in the loop.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="wrap">
+          <h2>Simple pricing</h2>
+          <p class="center">All plans include a 14-day trial of Business features.
+            <span class="toggle">
+              <button type="button" id="bill-monthly" aria-pressed="true">Monthly</button>
+              <button type="button" id="bill-yearly" aria-pressed="false">Yearly (save 20%)</button>
+            </span>
+          </p>
+          <div class="grid3 pricing">
+            <article class="card plan" id="plan-starter">
+              <h3>Starter</h3>
+              <p class="price"><span data-monthly="$0" data-yearly="$0">$0</span><small> forever</small></p>
+              <ul><li>Up to 5 people</li><li>3 projects</li><li>Timeline and board views</li></ul>
+              <a class="btn btn-ghost" href="#signup" data-plan="starter" id="choose-starter">Choose Starter</a>
+            </article>
+            <article class="card plan featured" id="plan-team">
+              <p class="badge">Most popular</p>
+              <h3>Team</h3>
+              <p class="price"><span data-monthly="$12" data-yearly="$9.60">$12</span><small> per user / month</small></p>
+              <ul><li>Unlimited people and projects</li><li>Workload view</li><li>Automatic weekly reports</li><li>All integrations</li></ul>
+              <a class="btn" href="#signup" data-plan="team" id="choose-team">Choose Team</a>
+            </article>
+            <article class="card plan" id="plan-business">
+              <h3>Business</h3>
+              <p class="price"><span data-monthly="$24" data-yearly="$19.20">$24</span><small> per user / month</small></p>
+              <ul><li>Everything in Team</li><li>Single sign-on (SSO)</li><li>Audit log</li><li>Priority support with 4-hour response</li></ul>
+              <a class="btn btn-ghost" href="#signup" data-plan="business" id="choose-business">Choose Business</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="testimonials">
+        <div class="wrap">
+          <h2>Teams ship faster with Orbitly</h2>
+          <div class="grid2">
+            <blockquote class="card">"We dropped our Monday status meeting entirely. The weekly report does the job." <cite>- Priya N., Head of Product at Fernway</cite></blockquote>
+            <blockquote class="card">"The workload view stopped us from burning out our two designers." <cite>- Marco D., Founder of Tidepool Studio</cite></blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="wrap narrow">
+          <h2>Frequently asked questions</h2>
+          <details><summary>Is the Starter plan really free?</summary><p>Yes. Starter is free forever for up to 5 people and 3 projects. No credit card is required.</p></details>
+          <details><summary>Can I cancel any time?</summary><p>Yes. Paid plans are billed monthly or yearly and you can cancel from your settings at any time. Yearly plans are refunded pro rata.</p></details>
+          <details><summary>Where is my data stored?</summary><p>You choose EU (Frankfurt) or US (Virginia) hosting when you create your workspace. Data is encrypted at rest and in transit.</p></details>
+          <details><summary>Do you offer discounts for non-profits?</summary><p>Yes, registered non-profits get 50% off the Team and Business plans. Contact us to apply.</p></details>
+        </div>
+      </section>
+
+      <section class="section alt" id="signup">
+        <div class="wrap form-wrap">
+          <div>
+            <h2>Create your free account</h2>
+            <p>Start on the Starter plan for free, or pick a paid plan to begin a 14-day trial. You can change plans any time.</p>
+          </div>
+          <form id="signup-form" class="card form" novalidate aria-labelledby="signup-title">
+            <h3 id="signup-title">Sign up</h3>
+            <div class="field">
+              <label for="full-name">Full name</label>
+              <input id="full-name" name="name" type="text" autocomplete="name" required placeholder="Jordan Lee" />
+            </div>
+            <div class="field">
+              <label for="email">Work email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" aria-describedby="email-hint" />
+              <p class="hint" id="email-hint">Use your company email so teammates can find your workspace.</p>
+            </div>
+            <div class="field">
+              <label for="company">Company name</label>
+              <input id="company" name="company" type="text" autocomplete="organization" required placeholder="Acme Inc." />
+            </div>
+            <div class="field">
+              <label for="team-size">Team size</label>
+              <select id="team-size" name="team_size" required>
+                <option value="">Choose…</option>
+                <option>Just me</option>
+                <option>2-5</option>
+                <option>6-20</option>
+                <option>21-50</option>
+                <option>More than 50</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="plan">Plan</label>
+              <select id="plan" name="plan" required>
+                <option value="starter">Starter (free)</option>
+                <option value="team">Team - 14-day trial</option>
+                <option value="business">Business - 14-day trial</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" autocomplete="new-password" required minlength="10" aria-describedby="password-hint" aria-errormessage="password-error" />
+              <p class="hint" id="password-hint">At least 10 characters, including a number and an uppercase letter.</p>
+              <p class="error" id="password-error" aria-live="polite"></p>
+            </div>
+            <div class="field check">
+              <input id="terms" name="terms" type="checkbox" required />
+              <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+            </div>
+            <div class="field check">
+              <input id="newsletter" name="newsletter" type="checkbox" />
+              <label for="newsletter">Send me product updates (optional)</label>
+            </div>
+            <button class="btn" type="submit" id="signup-submit">Create account</button>
+            <p class="success" id="signup-success" hidden>Account created! Check your inbox to confirm your email.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="wrap form-wrap">
+          <div>
+            <h2>Talk to us</h2>
+            <p>Questions about plans, non-profit discounts or migrating from another tool? Send us a message and we'll reply within one business day.</p>
+          </div>
+          <form id="contact-form" class="card form" novalidate aria-labelledby="contact-title">
+            <h3 id="contact-title">Contact sales</h3>
+            <div class="field">
+              <label for="contact-name">Your name</label>
+              <input id="contact-name" name="name" type="text" required />
+            </div>
+            <div class="field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" required />
+            </div>
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="4" required minlength="10" placeholder="How can we help?"></textarea>
+            </div>
+            <button class="btn" type="submit" id="contact-submit">Send message</button>
+            <p class="success" id="contact-success" hidden>Thanks! We'll get back to you within one business day.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="wrap">
+        <p><strong>Orbitly</strong> - made for small teams. hello@orbitly.example</p>
+        <p class="small">This is a demo page for the Avatar Guide project. Orbitly is fictional.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/demo/demo.js"></script>
+  </body>
+</html>

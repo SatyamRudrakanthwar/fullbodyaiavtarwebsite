@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenleaf Bakery - Fresh bread delivered</title>
+    <meta name="description" content="Greenleaf is a neighbourhood bakery that delivers sourdough, pastries and cakes across Austin every morning." />
+    <style>
+      body { margin: 0; font-family: Georgia, serif; color: #2b2118; background: #fffaf2; line-height: 1.6; }
+      .wrap { width: min(900px, 100% - 40px); margin: 0 auto; }
+      header { padding: 80px 0 40px; text-align: center; }
+      h1 { font-size: 2.6rem; margin: 0 0 12px; }
+      section { padding: 50px 0; border-top: 1px solid #eadfcd; }
+      .menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+      .item { background: #fff; border: 1px solid #eadfcd; border-radius: 12px; padding: 18px; }
+      form { display: grid; gap: 12px; max-width: 420px; }
+      label { font-weight: bold; }
+      input, select { font: inherit; padding: 8px 10px; border: 1px solid #cdbda5; border-radius: 8px; }
+      button { font: inherit; padding: 10px 18px; background: #2f6b3a; color: #fff; border: 0; border-radius: 8px; cursor: pointer; }
+      footer { padding: 40px 0 160px; color: #7a6a58; }
+    </style>
+  </head>
+  <body>
+    <header class="wrap">
+      <h1>Greenleaf Bakery</h1>
+      <p>Sourdough, pastries and celebration cakes, baked overnight and delivered across Austin by 8am.</p>
+    </header>
+    <main class="wrap">
+      <section id="menu">
+        <h2>This week's menu</h2>
+        <div class="menu">
+          <div class="item"><h3>Country sourdough</h3><p>48-hour ferment, $9 a loaf.</p></div>
+          <div class="item"><h3>Almond croissant</h3><p>Twice-baked, $4.50 each.</p></div>
+          <div class="item"><h3>Lemon olive-oil cake</h3><p>Serves 8, $32. Order 2 days ahead.</p></div>
+        </div>
+      </section>
+      <section id="delivery">
+        <h2>Delivery</h2>
+        <p>Free delivery within 5 miles of downtown on orders over $25. Order by 9pm for next-morning delivery. We don't deliver on Mondays.</p>
+      </section>
+      <section id="order">
+        <h2>Place an order</h2>
+        <form id="order-form" onsubmit="event.preventDefault(); alert('Order placed (demo)');">
+          <label for="o-name">Name</label>
+          <input id="o-name" required />
+          <label for="o-address">Delivery address</label>
+          <input id="o-address" required placeholder="Street, apartment, zip" />
+          <label for="o-item">What would you like?</label>
+          <select id="o-item" required>
+            <option value="">Choose…</option>
+            <option>Country sourdough</option>
+            <option>Almond croissant</option>
+            <option>Lemon olive-oil cake</option>
+          </select>
+          <button type="submit">Place order</button>
+        </form>
+      </section>
+    </main>
+    <footer class="wrap">Greenleaf Bakery is a fictional business used to demo the Avatar Guide embed.</footer>
+
+    <!-- The whole integration: one script tag. -->
+    <script src="/avatar-guide.js" data-name="Max" data-accent="#2f6b3a" defer></script>
+  </body>
+</html>

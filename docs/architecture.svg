@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 930" width="1280" height="930" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b3a4a"/>
+    </marker>
+    <style>
+      .zone-title { font-size: 17px; font-weight: 700; }
+      .box { fill: #ffffff; stroke-width: 1.5; }
+      .name { font-size: 14px; font-weight: 700; fill: #1d1b29; }
+      .desc { font-size: 12px; fill: #4a4860; }
+      .label { font-size: 12px; fill: #3b3a4a; font-weight: 600; }
+      .small { font-size: 11px; fill: #6b6880; }
+      .flow { stroke: #3b3a4a; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .flow-dash { stroke: #3b3a4a; stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="930" fill="#ffffff"/>
+  <text x="640" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1d1b29">Avatar Guide: system architecture</text>
+
+  <!-- ===================== BROWSER ===================== -->
+  <rect x="20" y="56" width="650" height="574" rx="14" fill="#f4f1ff" stroke="#7c5cff" stroke-width="2"/>
+  <text x="40" y="84" class="zone-title" fill="#5332e6">① Visitor's browser</text>
+
+  <rect x="40" y="98" width="610" height="56" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="56" y="121" class="name">Host web page</text>
+  <text x="56" y="141" class="desc">index.html (Orbitly demo) · public/embed-example.html · or any website with &lt;script src="…/avatar-guide.js"&gt;</text>
+
+  <rect x="40" y="170" width="610" height="352" rx="12" fill="#ebe5ff" stroke="#7c5cff" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="56" y="194" class="name" fill="#5332e6">Avatar widget  ·  built file: dist/avatar-guide.js  ·  source: src/widget/  (entry: src/embed.js)</text>
+
+  <rect x="56" y="206" width="578" height="58" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="72" y="229" class="name">index.js: Controller</text>
+  <text x="72" y="249" class="desc">Chat dock, speech bubble, runs each reply step: scroll → walk → point → speak</text>
+
+  <rect x="56" y="280" width="136" height="104" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="68" y="302" class="name">pageScanner.js</text>
+  <text x="68" y="322" class="desc">Reads the page into</text>
+  <text x="68" y="338" class="desc">a text snapshot;</text>
+  <text x="68" y="354" class="desc">MutationObserver</text>
+  <text x="68" y="370" class="desc">re-scans on change</text>
+
+  <rect x="204" y="280" width="136" height="104" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="216" y="302" class="name">brain.js</text>
+  <text x="216" y="322" class="desc">Calls /api/chat,</text>
+  <text x="216" y="338" class="desc">keeps session memory,</text>
+  <text x="216" y="354" class="desc">offline fallback when</text>
+  <text x="216" y="370" class="desc">the AI is unreachable</text>
+
+  <rect x="352" y="280" width="136" height="104" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="364" y="302" class="name">formGuide.js</text>
+  <text x="364" y="322" class="desc">Field-by-field help;</text>
+  <text x="364" y="338" class="desc">notices filled fields,</text>
+  <text x="364" y="354" class="desc">errors, completion.</text>
+  <text x="364" y="370" class="desc">Never submits.</text>
+
+  <rect x="500" y="280" width="134" height="104" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="512" y="302" class="name">stage.js</text>
+  <text x="512" y="322" class="desc">Walks the avatar,</text>
+  <text x="512" y="338" class="desc">smooth scrolling,</text>
+  <text x="512" y="354" class="desc">highlight ring, keeps</text>
+  <text x="512" y="370" class="desc">the arm on target</text>
+
+  <rect x="56" y="400" width="284" height="106" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="72" y="422" class="name">avatar3d.js: the 3D body</text>
+  <text x="72" y="442" class="desc">Three.js + @pixiv/three-vrm loads the VRM model.</text>
+  <text x="72" y="458" class="desc">Procedural poses: idle, walk, wave, think, listen,</text>
+  <text x="72" y="474" class="desc">talk · pointing arm IK · blinking · moods ·</text>
+  <text x="72" y="490" class="desc">mouth shapes (visemes) for lip-sync</text>
+
+  <rect x="352" y="400" width="136" height="106" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="364" y="422" class="name">speech.js</text>
+  <text x="364" y="442" class="desc">Voice out (TTS) +</text>
+  <text x="364" y="458" class="desc">mic in (STT); drives</text>
+  <text x="364" y="474" class="desc">mouth shapes in sync</text>
+  <text x="364" y="490" class="desc">with the words</text>
+
+  <rect x="500" y="400" width="134" height="106" rx="10" class="box" stroke="#7c5cff"/>
+  <text x="512" y="422" class="name">styles.js</text>
+  <text x="512" y="440" class="desc">Scoped widget CSS</text>
+  <text x="512" y="466" class="name">fallbackAvatar.js</text>
+  <text x="512" y="484" class="desc">2D body if WebGL</text>
+  <text x="512" y="498" class="desc">or the model fails</text>
+
+  <!-- internal arrows -->
+  <path d="M 420 384 L 420 400" class="flow"/>
+  <path d="M 270 264 L 270 280" class="flow"/>
+  <path d="M 124 264 L 124 280" class="flow"/>
+  <path d="M 567 264 L 567 280" class="flow"/>
+  <path d="M 352 453 L 340 453" class="flow"/>
+
+  <rect x="40" y="536" width="610" height="80" rx="10" class="box" stroke="#9b8ad9"/>
+  <text x="56" y="559" class="name">Browser features used</text>
+  <text x="56" y="580" class="desc">WebGL (3D rendering) · Web Speech API (microphone + voice) · sessionStorage (conversation memory)</text>
+  <text x="56" y="598" class="desc">DOM + MutationObserver (page reading) · smooth scrolling · pointer events (fade when hovered)</text>
+
+  <!-- ===================== SERVER ===================== -->
+  <rect x="700" y="56" width="330" height="574" rx="14" fill="#eaf8f0" stroke="#2f9e6a" stroke-width="2"/>
+  <text x="720" y="84" class="zone-title" fill="#1f7a50">② Node.js server (on Render)</text>
+
+  <rect x="716" y="98" width="298" height="124" rx="10" class="box" stroke="#2f9e6a"/>
+  <text x="732" y="121" class="name">server/index.js: Express</text>
+  <text x="732" y="141" class="desc">POST /api/chat → ask the AI, return JSON</text>
+  <text x="732" y="158" class="desc">GET  /api/health → status check</text>
+  <text x="732" y="175" class="desc">GET  /* → serves the built files in dist/</text>
+  <text x="732" y="192" class="desc">Rate limit · CORS · picks provider from .env</text>
+  <text x="732" y="209" class="desc">Cleans the AI's JSON before replying</text>
+
+  <rect x="716" y="236" width="298" height="70" rx="10" class="box" stroke="#2f9e6a"/>
+  <text x="732" y="259" class="name">server/prompt.js</text>
+  <text x="732" y="279" class="desc">Avatar persona, "answer only from the page",</text>
+  <text x="732" y="295" class="desc">pointing / tour / form rules, reply schema</text>
+
+  <rect x="716" y="320" width="298" height="112" rx="10" class="box" stroke="#2f9e6a"/>
+  <text x="732" y="343" class="name">server/llm/: AI providers</text>
+  <text x="732" y="363" class="desc">openaiCompat.js: Groq, Gemini, OpenRouter,</text>
+  <text x="732" y="379" class="desc">   Ollama (+ auto-switch model on rate limit)</text>
+  <text x="732" y="395" class="desc">anthropic.js: Claude (schema-checked JSON)</text>
+  <text x="732" y="411" class="desc">errors.js: one error type for all providers</text>
+
+  <rect x="716" y="446" width="298" height="170" rx="10" class="box" stroke="#2f9e6a"/>
+  <text x="732" y="469" class="name">dist/: built files it serves</text>
+  <text x="732" y="491" class="desc">index.html + assets/  → the Orbitly demo site</text>
+  <text x="732" y="509" class="desc">avatar-guide.js       → the embeddable widget</text>
+  <text x="732" y="527" class="desc">models/avatar.vrm     → 3D character (10 MB)</text>
+  <text x="732" y="545" class="desc">embed-example.html    → 2nd site (bakery)</text>
+  <text x="732" y="571" class="small">Created by "npm run build" from src/, index.html</text>
+  <text x="732" y="587" class="small">and public/. Not committed to git.</text>
+  <text x="732" y="603" class="small">.env (API key) lives only on the server.</text>
+
+  <!-- ===================== AI PROVIDERS ===================== -->
+  <rect x="1060" y="56" width="200" height="574" rx="14" fill="#fff5e8" stroke="#e08a1e" stroke-width="2"/>
+  <text x="1080" y="84" class="zone-title" fill="#b5650a">③ AI model (cloud)</text>
+
+  <rect x="1076" y="104" width="168" height="74" rx="10" class="box" stroke="#e08a1e" stroke-width="2.5"/>
+  <text x="1090" y="127" class="name">Groq (in use)</text>
+  <text x="1090" y="146" class="desc">openai/gpt-oss-120b</text>
+  <text x="1090" y="163" class="desc">fallback: gpt-oss-20b</text>
+
+  <rect x="1076" y="192" width="168" height="54" rx="10" class="box" stroke="#e08a1e"/>
+  <text x="1090" y="215" class="name">Google Gemini</text>
+  <text x="1090" y="233" class="desc">free tier (optional)</text>
+
+  <rect x="1076" y="260" width="168" height="54" rx="10" class="box" stroke="#e08a1e"/>
+  <text x="1090" y="283" class="name">OpenRouter</text>
+  <text x="1090" y="301" class="desc">free models (optional)</text>
+
+  <rect x="1076" y="328" width="168" height="54" rx="10" class="box" stroke="#e08a1e"/>
+  <text x="1090" y="351" class="name">Ollama</text>
+  <text x="1090" y="369" class="desc">local, no key (optional)</text>
+
+  <rect x="1076" y="396" width="168" height="54" rx="10" class="box" stroke="#e08a1e"/>
+  <text x="1090" y="419" class="name">Anthropic Claude</text>
+  <text x="1090" y="437" class="desc">paid, best quality</text>
+
+  <text x="1076" y="482" class="small">Only one is used at a time,</text>
+  <text x="1076" y="498" class="small">chosen by the key in .env</text>
+  <text x="1076" y="514" class="small">(LLM_PROVIDER to force one).</text>
+
+  <!-- ===================== CROSS-ZONE ARROWS ===================== -->
+  <!-- A: brain -> server (runs through the gap between widget rows) -->
+  <path d="M 300 280 L 300 272 L 646 272 C 690 272, 676 150, 716 150" class="flow"/>
+  <!-- B: server -> controller (reply) -->
+  <path d="M 716 196 C 690 196, 676 228, 634 228" class="flow"/>
+  <!-- C: llm -> provider -->
+  <path d="M 1014 376 C 1040 376, 1040 141, 1076 141" class="flow"/>
+  <!-- D: dist -> host page (static files) -->
+  <path d="M 716 500 C 680 500, 680 126, 650 126" class="flow-dash"/>
+
+  <!-- arrow badges (explained in the legend) -->
+  <g font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">
+    <circle cx="684" cy="178" r="10" fill="#5332e6"/><text x="684" y="182">A</text>
+    <circle cx="664" cy="212" r="10" fill="#1f7a50"/><text x="664" y="216">B</text>
+    <circle cx="1040" cy="258" r="10" fill="#b5650a"/><text x="1040" y="262">C</text>
+    <circle cx="686" cy="420" r="10" fill="#475467"/><text x="686" y="424">D</text>
+  </g>
+
+  <!-- ===================== BUILD & DEPLOY ===================== -->
+  <rect x="20" y="650" width="1240" height="262" rx="14" fill="#f3f4f7" stroke="#667085" stroke-width="2"/>
+  <text x="40" y="678" class="zone-title" fill="#344054">④ Build &amp; deploy pipeline</text>
+
+  <rect x="40" y="694" width="220" height="132" rx="10" class="box" stroke="#667085"/>
+  <text x="54" y="717" class="name">Source code (git)</text>
+  <text x="54" y="737" class="desc">src/widget/*  (avatar)</text>
+  <text x="54" y="753" class="desc">src/embed.js  (script tag)</text>
+  <text x="54" y="769" class="desc">src/demo/* + index.html</text>
+  <text x="54" y="785" class="desc">public/ (model, 2nd page)</text>
+  <text x="54" y="801" class="desc">server/  (API)</text>
+
+  <rect x="296" y="694" width="270" height="132" rx="10" class="box" stroke="#667085"/>
+  <text x="310" y="717" class="name">npm run build  (Vite)</text>
+  <text x="310" y="739" class="desc">vite.config.js → demo site:</text>
+  <text x="310" y="755" class="desc">   dist/index.html + dist/assets/</text>
+  <text x="310" y="777" class="desc">vite.widget.config.js → widget:</text>
+  <text x="310" y="793" class="desc">   dist/avatar-guide.js (one file,</text>
+  <text x="310" y="809" class="desc">   Three.js bundled inside)</text>
+
+  <rect x="602" y="694" width="200" height="132" rx="10" class="box" stroke="#667085"/>
+  <text x="616" y="717" class="name">dist/</text>
+  <text x="616" y="737" class="desc">Everything a browser</text>
+  <text x="616" y="753" class="desc">needs: pages, widget,</text>
+  <text x="616" y="769" class="desc">3D model, CSS/JS</text>
+  <text x="616" y="795" class="small">public/ is copied in</text>
+  <text x="616" y="811" class="small">unchanged</text>
+
+  <rect x="838" y="694" width="190" height="132" rx="10" class="box" stroke="#667085"/>
+  <text x="852" y="717" class="name">npm start</text>
+  <text x="852" y="737" class="desc">node server/index.js</text>
+  <text x="852" y="753" class="desc">One process serves</text>
+  <text x="852" y="769" class="desc">the API + dist/</text>
+  <text x="852" y="795" class="small">Dev mode instead:</text>
+  <text x="852" y="811" class="small">npm run dev (Vite :5173)</text>
+
+  <rect x="1064" y="694" width="180" height="132" rx="10" class="box" stroke="#667085"/>
+  <text x="1078" y="717" class="name">Render</text>
+  <text x="1078" y="737" class="desc">render.yaml defines</text>
+  <text x="1078" y="753" class="desc">build + start commands</text>
+  <text x="1078" y="769" class="desc">GROQ_API_KEY set in</text>
+  <text x="1078" y="785" class="desc">the Render dashboard</text>
+  <text x="1078" y="809" class="name" fill="#1f7a50">→ public https:// link</text>
+
+  <path d="M 260 760 L 296 760" class="flow"/>
+  <path d="M 566 760 L 602 760" class="flow"/>
+  <path d="M 802 760 L 838 760" class="flow"/>
+  <path d="M 1028 760 L 1064 760" class="flow"/>
+
+  <text x="40" y="856" class="label">Legend:</text>
+  <path d="M 100 852 L 150 852" class="flow"/>
+  <text x="158" y="856" class="desc">data / call flow</text>
+  <path d="M 270 852 L 320 852" class="flow-dash"/>
+  <text x="328" y="856" class="desc">files downloaded by the browser (page, widget, 3D model)</text>
+  <g font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">
+    <circle cx="50" cy="880" r="9" fill="#5332e6"/><text x="50" y="884">A</text>
+    <circle cx="390" cy="880" r="9" fill="#1f7a50"/><text x="390" y="884">B</text>
+    <circle cx="790" cy="880" r="9" fill="#b5650a"/><text x="790" y="884">C</text>
+    <circle cx="50" cy="902" r="9" fill="#475467"/><text x="50" y="906">D</text>
+  </g>
+  <text x="66" y="884" class="desc">POST /api/chat { history, page snapshot, form state }</text>
+  <text x="406" y="884" class="desc">JSON reply { steps: [{ say, target, gesture }], mood, action }</text>
+  <text x="806" y="884" class="desc">HTTPS call to the AI model, API key from .env</text>
+  <text x="66" y="906" class="desc">Browser downloads the page, avatar-guide.js and the 3D model from the server</text>
+</svg>
